@@ -16,7 +16,8 @@ def home(request):
     return render(request, 'home.html')
 
 def courses(request):
-    return render(request, 'courses.html')
+    context = {"courses_page": "active"} 
+    return render(request, 'courses.html', context)
 
 def login(request):
     return render(request, 'login.html')
@@ -34,13 +35,16 @@ def download(request):
     return render(request, 'download.html')
 
 def links(request):
-    return render(request, 'links.html')
+    context = {"links_page": "active"} 
+    return render(request, 'links.html', context)
 
 def comingsoon(request):
-    return render(request, 'comingsoon.html')
+    context = {"comingsoon_page": "active"} 
+    return render(request, 'comingsoon.html', context)
 
 def register(request):
     return render(request, "register.html")
 
 def dashboard(request):
-    return render(request, "dashboard.html")
+    context = {"dashboard_page": "active"} 
+    return render(request, "dashboard.html", context)
