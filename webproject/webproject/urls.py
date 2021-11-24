@@ -20,7 +20,6 @@ from webapp import templates
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', views.home),
     path('courses/', views.courses),
     path('login/', views.login),
     path('signup/', views.signup),
@@ -30,4 +29,7 @@ urlpatterns = [
     path('links/', views.links),
     path('comingsoon/', views.comingsoon),
     path('register/', views.register),
+    path('dashboard/', views.dashboard),
+    path('craft/', views.craft),
+    path('busreq/', views.busreq),
 ]
