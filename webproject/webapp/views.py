@@ -14,8 +14,10 @@ config = {
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
+
 def courses(request):
     return render(request, 'courses.html')
+
 def login(request):
     return render(request, 'login.html')
 
@@ -24,13 +26,21 @@ def signup(request):
 
 def error(request):
     return render(request, 'error.html')
+
 def programme(request):
     return render(request, 'programme.html')
+
 def download(request):
     return render(request, 'download.html')
+
 def links(request):
     return render(request, 'links.html')
+
 def comingsoon(request):
     return render(request, 'comingsoon.html')
+
 def register(request):
     return render(request, "register.html")
+
+def dashboard(request):
+    return render(request, "dashboard.html")

@@ -30,4 +30,5 @@ urlpatterns = [
     path('links/', views.links),
     path('comingsoon/', views.comingsoon),
     path('register/', views.register),
+    path('dashboard/', views.dashboard),
 ]
