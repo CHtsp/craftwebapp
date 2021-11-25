@@ -1,0 +1,21 @@
+{% extends 'layout.html'%}
+  {% block content %}
+  <h3>Coming Soon</h3>
+  <section class="min-vh-50 d-flex align-items-center">
+    <div class="container">
+      <div class="row mt-lg-0 mt-2">
+        <div class="col-lg-5 my-auto">
+          <h1 class="display-1 text-bolder text-gradient text-warning fadeIn1 fadeInBottom mt-5">Coming soon page</h1>
+          <h2 class="fadeIn3 fadeInBottom opacity-8">Page is coming</h2>
+          <p class="lead opacity-6 fadeIn2 fadeInBottom">Under development see you soon.</p>
+          <a class="nav-link {{ dashboard_page }}" href="/dashboard">
+          <button type="button" class="btn bg-gradient-warning mt-4 fadeIn2 fadeInBottom">Go to Dashboard</button>
+          </a>
+        </div>
+        <div class="col-lg-7 my-auto">
+          <img class="w-100 fadeIn1 fadeInBottom" src="https://appsrv1-147a1.kxcdn.com/soft-ui-dashboard-pro/img/illustrations/error-500.png">
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}

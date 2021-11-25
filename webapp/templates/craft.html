@@ -1,0 +1,41 @@
+{% extends 'layout.html'%}
+  {% block content %}
+  <h3>Courses details</h3>
+  <section class="py-3">
+    <div class="row">
+      <div class="col-md-15 me-auto text-left">
+        <h5>2603571 Craft of Software Development</h5>
+        <p> รายวิชาประจำภาคการศึกษาที่ 1 ของแผนการศึกษา คือแผน ก และ แผน ข โดยมีหน่วยกิต 3 หน่วยกิต 3(3-0-9)</p>
+      </div>
+    </div>
+    <div class="row mt-lg-4 mt-2">
+      <div class="col-lg-20 col-md-20 mb-50">
+        <div class="card">
+          <div class="card-body p-3">
+            <div class="d-flex">
+              <div class="avatar avatar-xl bg-gradient-dark border-radius-md p-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/2621/2621303.png" alt="craft_logo">
+              </div>
+              <div class="ms-3 my-auto">
+                <h6> ทักษะการพัฒนาซอฟต์แวร์ </h6>
+                <h6> Craft of Software Development </h6>
+              </div>
+              <div class="ms-auto">
+              </div>
+            </div>
+            <h5 class="text-sm mt-3"> การเขียนโปรแกรมขั้นพื้นฐาน สภาวะแวดล้อมการพัฒนาซอฟต์แวร์ เครื่องมือในการพัฒนาซอฟต์แวร์ ฐานข้อมูล เทคนิคการเขียนโปรแกรม การเขียนโปรแกรมบนเว็บ เทคโนโลยีเว็บ เว็บเซอร์วิส ส่วนต่อประสานโปรแกรมประยุกต์ เวอร์ชั่นคอนโทรล ความมั่นคงปลอดภัย  </h5>
+            <h5 class="text-sm mt-3"> Basic programming; software development environments; software developmenttools; databases; programing techniques; web programming; web technologies; webservices; Application Program Interfaces (APIs); version control; security  </h5>
+            <hr class="horizontal dark">
+            <div class="row">
+              <div class="col-6">
+                <a class="nav-link {{ courses_page }}" href="/courses">
+                  <button type="button" class="btn bg-gradient-warning mt-2 fadeIn2 fadeInBottom"> Back </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}
