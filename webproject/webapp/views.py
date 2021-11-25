@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User,auth
+from django.contrib import messages
 config = {
     'apiKey': "AIzaSyDUFgVOBI1mGpoESnvcq6qIE8z2BzSijVE",
     'authDomain': "fir-app-68c4f.firebaseapp.com",
@@ -13,6 +14,9 @@ config = {
 }
 # Create your views here.
 def dashboard(request):
+    # if not request.user.is_authenticated :
+    #     return redirect('/loginForm')
+
     context = {'dashboard_page' : 'active'}
     return render(request, 'dashboard.html', context)
 
@@ -21,20 +25,24 @@ def courses(request):
     return render(request, 'courses.html', context)
 
 def loginForm(request):
-    return render(request, 'loginForm.html')
+    return render(request, 'login.html')
 
 def login(request):
     username=request.POST.get('username')
     password=request.POST.get('password')
 
-    user=auth.authentication(username=username,password=password)
+    user=auth.authenticate(username=username,password=password)
 
     if user is not None :
         auth.login(request,user)
         return redirect('/dashboard')
     else :
-        messages.info(request,'ไม่พบข้อมูลผู้ใช้งาน')
-    return render(request, 'login.html')
+        messages.add_message(request, messages.INFO, 'ไม่พบข้อมูลผู้ใช้งาน')
+        return render(request, 'login.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/loginForm')
 
 def error(request):
     return render(request, 'error.html')
@@ -69,10 +77,21 @@ def signupForm(request):
 def signup(request):
     username=request.POST.get('username')
     password=request.POST.get('password')
-    user=User.objects.create_user(
-        username=username,
-        password=password
-    )
-
-    user.save()
-    return redirect('/dashboard')
+    cfpassword=request.POST.get('cfpassword')
+    if password == cfpassword :
+        if User.objects.filter(username=username).exists():
+           messages.add_message(request, messages.INFO, 'ชื่อผู้ใช้งานซ้ำ')
+           messages.info(request,'ชื่อผู้ใช้งานซ้ำ')
+           return redirect('/signupForm')
+        else : 
+            user=User.objects.create_user(
+                username=username,
+                password=password
+            )
+            user.save()
+            auth.login(request,user)
+            return redirect('/dashboard')
+    else :
+        messages.add_message(request, messages.INFO, 'password and confirm password ต้องตรงกัน')
+        # messages.info(request,'password and confirm password ต้องตรงกัน')
+        return redirect('/signupForm')
