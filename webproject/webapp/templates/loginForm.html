@@ -1,0 +1,12 @@
+{% extends 'layout.html'%}
+    {% block content %}
+    <h2>ลงชื่อเข้าใช้งาน</h2>
+    <form action="/signup/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input class="form-control mt-3" type="text" name="username" placeholder="username">
+            <input class="form-control mt-3" type="text" name="password" placeholder="password">
+            <button type="submit" class="btn btn-info  mt-3"> เข้าใช้งาน </button>
+        </div>
+    </form>
+    {% endblock %}
