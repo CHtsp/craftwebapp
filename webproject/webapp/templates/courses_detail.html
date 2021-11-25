@@ -1,0 +1,43 @@
+
+{% extends 'layout.html'%}
+  {% block content %}
+  <h3>Courses details</h3>
+  <section class="py-3">
+    <div class="row">
+      <div class="col-md-15 me-auto text-left">
+        <h5>{{ data.key }} {{ data.name }}</h5>
+        <!-- <p> รายวิชาประจำภาคการศึกษาที่ 1 ของแผนการศึกษา คือแผน ก และ แผน ข โดยมีหน่วยกิต 3 หน่วยกิต 3(3-0-9)</p> -->
+      </div>
+    </div>
+    <div class="row mt-lg-4 mt-2">
+      <div class="col-lg-20 col-md-20 mb-50">
+        <div class="card">
+          <div class="card-body p-3">
+            <div class="d-flex">
+              <div class="avatar avatar-xl bg-gradient-dark border-radius-md p-2">
+                <img src="{{ data.img_path }}" alt="craft_logo">
+              </div>
+              <div class="ms-3 my-auto">
+                <h6> {{ data.title }} </h6>
+                <h6> {{ data.name }} </h6>
+              </div>
+              <div class="ms-auto">
+              </div>
+            </div>
+            <h4 class="text-sm mt-3">Description</h4>
+            <h5 class="text-sm">{{ data.text }}</h5>
+            <!-- <h5 class="text-sm mt-3"> Basic programming; software development environments; software developmenttools; databases; programing techniques; web programming; web technologies; webservices; Application Program Interfaces (APIs); version control; security  </h5> -->
+            <hr class="horizontal dark">
+            <div class="row">
+              <div class="col-6">
+                <a href="/courses">
+                  <button type="button" class="btn bg-gradient-warning mt-2 fadeIn2 fadeInBottom"> Back </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}

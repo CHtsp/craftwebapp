@@ -21,6 +21,9 @@ from webapp import templates
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('courses/', views.courses),
+    path('courses/<int:id>', views.coursesDetail),  
+    path('courses/add', views.coursesForm),  
+    path('courses/store/', views.coursesStore),  
     path('login/', views.login),
     path('loginForm/', views.loginForm),
     path('logout/', views.logout),
