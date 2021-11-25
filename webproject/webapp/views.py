@@ -59,6 +59,8 @@ def coursesStore(request):
     return redirect('/courses')
 
 def loginForm(request):
+    if  request.user.is_authenticated :
+         return redirect('/dashboard')
     return render(request, 'login.html')
 
 def login(request):
